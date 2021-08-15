@@ -1,11 +1,27 @@
 
 
 .header {
+    position: relative;
     height: 650px;
     background: url('../images/mobile/image-hero.jpg') no-repeat center center;
     background-size: 100%;
     font-family: 'Josefin Sans', sans-serif;
     margin-bottom: 60px;
+
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $black;
+        opacity: 0.25;
+        z-index: 1;
+
+    }
+
     @include breakpoint-up(large){
         background: url('../images/desktop/image-hero.jpg') no-repeat center center;
         background-size: cover;
@@ -16,6 +32,7 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: 160px;
+
         &.open {
             .header {
                 &__hamburger {
@@ -39,7 +56,7 @@
 
     &__logo {
         width: 145px;
-        z-index: 3;
+        z-index: 4;
 
         @include breakpoint-up(large){
             width: 195px;
@@ -48,11 +65,12 @@
 
     &__hamburger {
         cursor: pointer;
+        z-index: 2;
     }
 
     &__close {
         display: none;
-        z-index: 3;
+        z-index: 4;
         cursor: pointer;
     }
 
@@ -63,7 +81,7 @@
         left: 0px;
         width: 100vw;
         height: 100vh;
-        z-index: 2;
+        z-index: 3;
         background-color: $black;
         display: flex;
         flex-direction: column;
@@ -91,6 +109,8 @@
     }
 
     &__desktop-menu {
+        
+        z-index: 2;
         > a {
             position: relative;
             color: $white;
@@ -134,6 +154,7 @@
             padding: 24px 24px 20px 24px;
             border: 2px solid $white;
 
+            z-index: 2;
             @include breakpoint-fixed-up(500px){
                 width: 420px;
             }
