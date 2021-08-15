@@ -1,0 +1,106 @@
+
+.footer {
+    background-color: $black;
+    font-family: 'Alata', sans-serif;
+    a {
+        position: relative;
+        font-weight: 400;
+        color: $white;
+
+        &:hover {
+            &::before {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 24px;
+            height: 2px;
+            background-color: $white;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    &__body {
+        padding: 55px 48px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include breakpoint-up(large){
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 45px 0;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 36px;
+
+        @include breakpoint-up(large){
+            display: block;
+            margin-bottom: 0;
+        }
+
+        > a {
+            font-size: 16px;
+            line-height: 40px;
+            @include breakpoint-up(large){
+                line-height: 18px;
+                &:not(:last-child){
+                    margin-right: 16px;
+                }
+            }
+            @include breakpoint-fixed-up(1300px){
+                &:not(:last-child){
+                    margin-right: 32px;
+                }
+            }
+        }
+    }
+
+    &__logo {
+        width: 140px;
+        display: block;
+        margin-bottom: 32px;
+        @include breakpoint-up(large){
+            margin-bottom: 24px;
+        }
+    }
+    &__social-links { 
+
+        @include breakpoint-up(large){
+            text-align: right;
+        }
+        a{
+            width: 25px;
+            height: 25px;
+            margin-right: 16px;
+        }
+        #insta {
+            margin-right: 0;
+        }
+        img { 
+            width: 25px;
+            height: 25px;
+        }
+        > p {
+            color: $darkGray;
+            margin-top: 22px;
+        }
+    }
+
+}

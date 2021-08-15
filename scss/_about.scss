@@ -1,0 +1,104 @@
+
+
+.about {
+
+
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-family: 'Alata', sans-serif;
+
+        @include breakpoint-up(large){
+            flex-direction: row;
+            align-items: flex-end;
+            padding-top: 100px;
+            padding-bottom: 185px;
+        }
+        @include breakpoint-fixed-up(1300px){
+            flex-direction: row;
+            align-items: flex-end;
+            padding-top: 100px;
+            padding-bottom: 185px;
+        }
+    }
+
+    &__img {
+        width: 327px;
+        height: 220px;
+        background: url('../images/mobile/image-interactive.jpg') no-repeat center center;
+        background-size: cover;
+        
+        @include breakpoint-fixed-up(768px){
+            width: 600px;
+            height: 410px;
+        }
+
+        @include breakpoint-up(large){
+            flex: 3;
+            height: 360px;
+            background: url('../images/desktop/image-interactive.jpg') no-repeat center center;
+            background-size: cover;
+        }        
+        @include breakpoint-fixed-up(1200px){
+            height: 420px;
+        }
+        @include breakpoint-fixed-up(1300px){
+            flex: 3.1;
+            height: 500px;
+        }
+
+    }
+
+    &__text {
+        @include breakpoint-fixed-up(500px){
+            width: 450px;
+        }          
+        @include breakpoint-fixed-up(768px){
+            width: 600px;
+        }            
+        @include breakpoint-up(large){
+            flex: 2;
+            padding: 70px 0 0 70px;
+            margin-left: -140px;
+            background-color: $white;
+            text-align: left;
+        }
+        @include breakpoint-fixed-up(1300px){
+            flex: 1.9;
+            padding: 94px 0 0 94px;
+            margin-left: -160px;
+        }
+
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 32px;
+        font-weight: 300;
+        font-family: 'Josefin Sans', sans-serif;
+        color: $black;
+        margin-bottom: 20px;
+        @include breakpoint-fixed-up(768px){
+            font-size: 40px;
+        }  
+
+        @include breakpoint-fixed-up(1200px){
+            font-size: 48px;
+        }
+    }
+
+    &__description {
+        line-height: 24px;
+        color: $veryDarkGray;
+        @include breakpoint-up(large){
+            font-size: 14px;
+        }
+        @include breakpoint-up(xlarge){
+            font-size: 15px;
+            line-height: 26px;
+        }
+    }
+}

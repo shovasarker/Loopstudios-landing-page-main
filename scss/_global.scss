@@ -1,0 +1,88 @@
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    width: 100vw;
+    overflow-x: hidden;
+    &.open{
+        overflow-y: hidden;
+    }
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+.container {
+    @include breakpoint-up(large){
+        width: 77.8%;
+        margin: 0 auto;
+    }
+}
+
+.p {
+
+
+    &-5 {
+        padding: 40px 24px;
+
+        @include breakpoint-fixed-up(500px) {
+            padding: 40px 8%;
+        }
+
+        @include breakpoint-up(large){
+            padding: 60px 0;
+        }
+
+        @include breakpoint-up(xlarge){
+            padding: 60px 0;
+        }
+    }
+
+    &x-24{
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    &y-40 {
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+    }
+
+    &t-40 {
+        padding-top: 40px;
+    }
+    &b-40 {
+        padding-bottom: 40px;
+    }
+
+    &l-24 {
+        padding-left: 24px;
+    }
+
+    &r-24 {
+        padding-right: 24px;
+    }
+}
+
+
+.hide-for-mobile {
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large){
+        display: none;
+    }
+}
+
